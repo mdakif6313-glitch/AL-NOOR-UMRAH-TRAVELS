@@ -31,23 +31,29 @@
       color: #fff;
       overflow: hidden;
     }
+
+    /* Hero image */
     header::before {
       content: '';
       position: absolute;
       top:0; left:0; width:100%; height:100%;
       background: url('https://images.unsplash.com/photo-1592144603724-12b6ff4649be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
       background-size: cover;
-      filter: brightness(0.6);
       z-index: 1;
     }
 
-    /* Particles container */
+    /* Dark overlay */
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+
     #particles-js {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0; width: 100%; height: 100%;
       z-index: 2;
     }
 
@@ -99,7 +105,6 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.12);
     }
 
-    /* --- HIGHLIGHT BOX --- */
     .highlight {
       background: #fff;
       border-left: 6px solid #c9a14a;
@@ -110,6 +115,27 @@
       margin: auto;
       font-weight: 500;
       opacity: 0;
+    }
+
+    /* --- What We Offer List --- */
+    .offer-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .offer-item {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+      font-weight: 500;
+      opacity: 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .offer-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     }
 
     .contact p {
@@ -172,6 +198,25 @@
   <section>
     <h2>About Us</h2>
     <p class="animate__animated animate__fadeIn">Al-Noor Umrah Tours & Travels is your trusted partner for a smooth, comfortable, and spiritually fulfilling Umrah journey. We guide pilgrims to Makkah & Madinah with care and excellence.</p>
+  </section>
+
+  <!-- WHAT WE OFFER -->
+  <section>
+    <h2>What We Offer</h2>
+    <div class="offer-list">
+      <div class="offer-item">1. Round trip flight ✈</div>
+      <div class="offer-item">2. Luxury bus 🚌</div>
+      <div class="offer-item">3. Hotel 🏨 (3 star/5 Star)</div>
+      <div class="offer-item">4. Indian Food 🍽 (Breakfast / Lunch / Dinner) unlimited</div>
+      <div class="offer-item">5. Umrah kit</div>
+      <div class="offer-item">6. Local Ziyarat</div>
+      <div class="offer-item">7. Taif Ziyarat</div>
+      <div class="offer-item">8. Badr Ziyarat</div>
+      <div class="offer-item">9. Madina (Riyazul Jannah)</div>
+      <div class="offer-item">10. Quba Masjid</div>
+      <div class="offer-item">11. 5 liters Zam Zam water</div>
+      <div class="offer-item" style="grid-column: span 2; font-weight:bold;">Complimentary: Visa with Health Insurance ✅</div>
+    </div>
   </section>
 
   <!-- SERVICES -->
@@ -248,33 +293,8 @@
       "retina_detect": true
     });
 
-    // Animate cards & highlight on scroll
-    const cards = document.querySelectorAll('.card');
+    // Animate cards & highlights on scroll
+    const cards = document.querySelectorAll('.card, .offer-item');
     const highlight = document.querySelector('.highlight');
 
-    function animateOnScroll() {
-      const triggerBottom = window.innerHeight / 5 * 4;
-
-      cards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-        if(cardTop < triggerBottom){
-          card.style.opacity = 1;
-          card.classList.add('animate__animated', 'animate__fadeInUp');
-        }
-      });
-
-      if(highlight){
-        const hlTop = highlight.getBoundingClientRect().top;
-        if(hlTop < triggerBottom){
-          highlight.style.opacity = 1;
-          highlight.classList.add('animate__animated', 'animate__fadeInUp');
-        }
-      }
-    }
-
-    window.addEventListener('scroll', animateOnScroll);
-    window.addEventListener('load', animateOnScroll);
-  </script>
-
-</body>
-</html>
+    function ani
