@@ -2,36 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Al-Noor Umrah Tours & Travels</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 html { scroll-behavior: smooth; }
-
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #f5f7fa;
+  background: #f4f6f8;
 }
 
 /* NAVBAR */
 nav {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
-  background: #0b2d3a;
-  padding: 12px 40px;
+  background: rgba(0,0,0,0.7);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 40px;
   z-index: 1000;
 }
-
-nav h2 {
-  color: white;
-  margin: 0;
-}
+nav h2 { color: #fff; margin: 0; }
 
 nav ul {
   list-style: none;
@@ -41,63 +37,104 @@ nav ul {
   padding: 0;
 }
 
+nav ul li {
+  position: relative;
+}
+
 nav ul li a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
 }
 
-nav ul li a:hover {
-  color: #f4c430;
+nav ul li:hover ul {
+  display: block;
 }
 
-/* HERO */
+/* DROPDOWN */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background: #111;
+  top: 35px;
+  left: 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+nav ul li ul li {
+  padding: 8px 15px;
+}
+nav ul li ul li a {
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* HERO SLIDESHOW */
 .hero {
-  height: 90vh;
-  background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-  url("https://images.unsplash.com/photo-1548013146-72479768bada");
+  height: 100vh;
   background-size: cover;
   background-position: center;
+  animation: slide 12s infinite;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  color: white;
+  justify-content: center;
   text-align: center;
 }
+@keyframes slide {
+  0% {
+    background-image:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url("https://images.unsplash.com/photo-1589187155478-3c2e1f9e44b4");
+  }
+  50% {
+    background-image:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url("https://images.unsplash.com/photo-1600959907703-125ba1374a12");
+  }
+  100% {
+    background-image:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url("https://images.unsplash.com/photo-1581091012184-7a8b4f71f4c7");
+  }
+}
 
-.hero h1 {
+.hero-content {
+  color: white;
+  max-width: 800px;
+}
+
+.hero-content h1 {
   font-size: 3rem;
 }
 
-.hero p {
+.hero-content p {
   font-size: 1.2rem;
 }
 
-.hero a {
+.hero-content a {
+  display: inline-block;
   margin-top: 20px;
   padding: 14px 35px;
   background: #f4c430;
   color: black;
   text-decoration: none;
-  font-weight: 600;
   border-radius: 30px;
+  font-weight: 600;
 }
 
 /* SECTIONS */
 section {
-  padding: 70px 40px;
+  padding: 80px 40px;
   max-width: 1200px;
   margin: auto;
 }
 
 h2 {
   text-align: center;
-  color: #0b2d3a;
   margin-bottom: 40px;
+  color: #0b2d3a;
 }
 
-/* CARDS */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -109,6 +146,7 @@ h2 {
   padding: 25px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  text-align: center;
 }
 
 /* FOOTER */
@@ -136,62 +174,68 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <h2>Al-Noor Umrah</h2>
   <ul>
     <li><a href="#home">Home</a></li>
-    <li><a href="#services">Services</a></li>
+
+    <li>
+      <a href="#services">Umrah & Ziyarat ▾</a>
+      <ul>
+        <li><a href="#local">Local Ziyarat</a></li>
+        <li><a href="#taif">Taif Ziyarat</a></li>
+        <li><a href="#badr">Badr Ziyarat</a></li>
+      </ul>
+    </li>
+
     <li><a href="#packages">Packages</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero" id="home">
-  <h1>Al-Noor Umrah Tours & Travels</h1>
-  <p>“Bless Your Journey With Us”</p>
-  <a href="#contact">Book Your Umrah Now</a>
+  <div class="hero-content">
+    <h1>Al-Noor Umrah Tours & Travels</h1>
+    <p>“Bless Your Journey With Us”</p>
+    <a href="#contact">Book Your Umrah Now</a>
+  </div>
 </div>
 
-<!-- SERVICES -->
 <section id="services">
-  <h2>What Do We Offer?</h2>
-  <div class="cards">
-    <div class="card">✈ Round Trip Flight</div>
-    <div class="card">🚌 Luxury Bus</div>
-    <div class="card">🏨 3★ / 5★ Hotels</div>
-    <div class="card">🍽 Indian Food (Unlimited)</div>
-    <div class="card">🕋 Umrah Kit & Ziyarat</div>
-    <div class="card">🛂 Visa + Health Insurance</div>
-  </div>
+<h2>What Do We Offer?</h2>
+<div class="cards">
+  <div class="card">✈ Round Trip Flight</div>
+  <div class="card">🚌 Luxury Bus</div>
+  <div class="card">🏨 3★ / 5★ Hotels</div>
+  <div class="card">🍽 Indian Food (Unlimited)</div>
+  <div class="card">🕋 Umrah Kit</div>
+  <div class="card">🛂 Visa + Health Insurance</div>
+</div>
 </section>
 
-<!-- PACKAGES -->
 <section id="packages">
-  <h2>Our Umrah Packages</h2>
-  <div class="cards">
-    <div class="card">Economy Umrah Package</div>
-    <div class="card">Standard Umrah Package</div>
-    <div class="card">Luxury Umrah Package</div>
-  </div>
+<h2>Our Umrah Packages</h2>
+<div class="cards">
+  <div class="card">Economy Umrah Package</div>
+  <div class="card">Standard Umrah Package</div>
+  <div class="card">Luxury Umrah Package</div>
+</div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-  <h2>Contact Us</h2>
-  <div class="card">
-    <p><strong>Email:</strong> AlNOORUMRAHTRAVEL@GMAIL.COM</p>
-    <p><strong>Phone:</strong> +91 8186004018</p>
-    <p><strong>Address:</strong> Nellore, Andhra Pradesh, India</p>
-  </div>
+<h2>Contact Us</h2>
+<div class="card">
+<p>Email: AlNOORUMRAHTRAVEL@GMAIL.COM</p>
+<p>Phone: +91 8186004018</p>
+<p>Address: Nellore, Andhra Pradesh, India</p>
+</div>
 </section>
 
 <footer>
-  © 2026 Al-Noor Umrah Tours & Travels
+© 2026 Al-Noor Umrah Tours & Travels
 </footer>
 
-<a class="whatsapp" href="https://wa.me/918186004018" target="_blank">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/918186004018">WhatsApp</a>
 
 </body>
 </html>
