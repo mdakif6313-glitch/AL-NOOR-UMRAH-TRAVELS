@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Al‑Noor Umrah Tours & Travels</title>
+<title>Al-Noor Umrah Tours & Travels</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#f9fafb;color:#333}
+body{font-family:'Poppins',sans-serif;background:#f9fafb;color:#333;scroll-behavior:smooth}
 
 /* NAVBAR */
 nav{
@@ -23,7 +23,7 @@ nav{
   align-items:center;
   z-index:999;
 }
-nav h1{color:#fff;font-size:1.6rem}
+nav h1{color:#fff;font-size:1.6rem;cursor:pointer}
 nav ul{list-style:none;display:flex}
 nav ul li{position:relative}
 nav ul li a{
@@ -38,8 +38,10 @@ nav ul li ul{
   position:absolute;
   background:#145a43;
   min-width:200px;
+  border-radius:5px;
 }
 nav ul li ul li a:hover{background:#1f7a5c}
+nav .hamburger{display:none;font-size:1.8rem;color:#fff;cursor:pointer}
 
 /* HERO */
 .hero{
@@ -89,6 +91,7 @@ h3{text-align:center;font-size:2.2rem;color:#0b3c2d;margin-bottom:50px}
 /* PACKAGES */
 .package{
   border:2px solid #c9a14a;
+  cursor:pointer;
 }
 .package span{
   display:block;
@@ -130,6 +133,14 @@ footer{
   text-decoration:none;
   font-weight:bold;
 }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav ul{flex-direction:column;display:none;width:100%;background:rgba(11,60,45,0.95);position:absolute;top:60px;left:0}
+  nav ul.show{display:flex}
+  nav ul li ul{position:static;background:#145a43;border-radius:0}
+  nav .hamburger{display:block}
+}
 </style>
 </head>
 
@@ -137,83 +148,97 @@ footer{
 
 <!-- NAVBAR -->
 <nav>
-  <h1>Al‑Noor Umrah</h1>
+  <h1 onclick="window.scrollTo({top:0,behavior:'smooth'})">Al-Noor Umrah</h1>
+  <div class="hamburger">&#9776;</div>
   <ul>
-    <li><a href="#">Home</a></li>
+    <li><a href="#home">Home</a></li>
     <li>
       <a href="#">Umrah ▾</a>
       <ul>
-        <li><a href="#">Economy Umrah</a></li>
-        <li><a href="#">Standard Umrah</a></li>
-        <li><a href="#">Luxury Umrah</a></li>
+        <li><a href="#economy">Economy Umrah</a></li>
+        <li><a href="#standard">Standard Umrah</a></li>
+        <li><a href="#luxury">Luxury Umrah</a></li>
       </ul>
     </li>
     <li>
       <a href="#">Packages ▾</a>
       <ul>
-        <li><a href="#">Group Packages</a></li>
-        <li><a href="#">Family Packages</a></li>
-        <li><a href="#">Senior Packages</a></li>
+        <li><a href="#packages">All Packages</a></li>
+        <li><a href="#what-we-offer">Services</a></li>
       </ul>
     </li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero" id="home">
   <div>
-    <h2>Al‑Noor Umrah Tours & Travels</h2>
+    <h2>Al-Noor Umrah Tours & Travels</h2>
     <p>Bless Your Journey With Us</p>
-    <button>Book Your Umrah Now</button>
+    <button onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Book Your Umrah Now</button>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section>
+<!-- WHAT WE OFFER -->
+<section id="what-we-offer">
   <h3>What We Offer</h3>
   <div class="cards">
-    <div class="card"><h4>Flights ✈</h4>Round Trip Flights</div>
-    <div class="card"><h4>Hotels 🏨</h4>3★ / 5★ Hotels</div>
-    <div class="card"><h4>Food 🍽</h4>Unlimited Indian Food</div>
-    <div class="card"><h4>Ziyarat 🕌</h4>Makkah & Madinah Tours</div>
-    <div class="card"><h4>Transport 🚌</h4>Luxury AC Buses</div>
-    <div class="card"><h4>Visa ✅</h4>Visa + Health Insurance</div>
+    <div class="card">Round trip flight ✈</div>
+    <div class="card">Luxury bus 🚌</div>
+    <div class="card">Hotel 🏨 (3★ / 5★)</div>
+    <div class="card">Indian Food (Breakfast / Lunch / Dinner) unlimited</div>
+    <div class="card">Umrah Kit</div>
+    <div class="card">Local Ziyarat</div>
+    <div class="card">Taif Ziyarat</div>
+    <div class="card">Badr Ziyarat</div>
+    <div class="card">Madina (Riyazul Jannah)</div>
+    <div class="card">Quba Masjid</div>
+    <div class="card">5 liters Zam Zam water</div>
+    <div class="card">Complimentary: Visa with Health Insurance ✅</div>
   </div>
 </section>
 
 <!-- PACKAGES -->
-<section>
+<section id="packages">
   <h3>Umrah Packages</h3>
   <div class="cards">
-    <div class="card package">
-      <h4>Economy Umrah</h4>
-      <span>Best for Budget Travelers</span>
-    </div>
-    <div class="card package">
-      <h4>Standard Umrah</h4>
-      <span>Comfort & Value</span>
-    </div>
-    <div class="card package">
-      <h4>Luxury Umrah</h4>
-      <span>Premium Experience</span>
-    </div>
+    <div class="card package" id="economy">Economy Umrah<br><span>Best for Budget Travelers</span></div>
+    <div class="card package" id="standard">Standard Umrah<br><span>Comfort & Value</span></div>
+    <div class="card package" id="luxury">Luxury Umrah<br><span>Premium Experience</span></div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta">
+<section class="cta" id="cta">
   <h3>Ready for a Blessed Journey?</h3>
-  <button>Contact Us Now</button>
+  <button onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Contact Us Now</button>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h3>Contact Us</h3>
+  <p>Email: AlNOORUMRAHTRAVEL@GMAIL.COM</p>
+  <p>Phone / WhatsApp: +91 8186004018</p>
+  <p>Address: Nellore, Andhra Pradesh, India</p>
+  <p>Languages: English | Urdu | Hindi</p>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Al‑Noor Umrah Tours & Travels</p>
-  <p>Nellore, Andhra Pradesh | +91 8186004018</p>
+  <p>© 2026 Al-Noor Umrah Tours & Travels</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/918186004018">WhatsApp</a>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/918186004018" target="_blank">WhatsApp</a>
+
+<!-- JS -->
+<script>
+// Hamburger toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('nav ul');
+hamburger.addEventListener('click', () => { navMenu.classList.toggle('show'); });
+</script>
 
 </body>
 </html>
