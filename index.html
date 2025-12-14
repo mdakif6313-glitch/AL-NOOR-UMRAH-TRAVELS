@@ -4,55 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Al-Noor Umrah Tours & Travels</title>
-  
-  <!-- Google Fonts for a modern, classy look -->
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
   <style>
-    /* --- BODY --- */
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(180deg, #f7f9fa 0%, #e8edf2 100%);
       color: #333;
-      line-height: 1.6;
+      overflow-x: hidden;
     }
 
     /* --- HEADER --- */
     header {
-      background: linear-gradient(135deg, #0b3c2d, #145a42);
-      color: #fff;
-      padding: 90px 20px;
-      text-align: center;
       position: relative;
+      height: 450px;
+      text-align: center;
+      color: #fff;
       overflow: hidden;
     }
-    header::after {
-      content: "";
-      background: url('https://i.ibb.co/k0K9s5k/islamic-pattern.png') no-repeat center center;
-      background-size: cover;
-      opacity: 0.05;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
+    header::before {
+      content: '';
       position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: url('https://i.ibb.co/xFZ4c3C/kaaba-makkah.jpg') no-repeat center center;
+      background-size: cover;
+      filter: brightness(0.6);
       z-index: 1;
     }
+
+    /* Particles container */
+    #particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
-      margin-bottom: 15px;
-      z-index: 2;
       position: relative;
+      z-index: 3;
+      margin-top: 120px;
+      animation: slideInDown 1s ease forwards;
     }
     header p {
-      font-size: 1.2rem;
-      z-index: 2;
+      font-size: 1.3rem;
       position: relative;
+      z-index: 3;
+      margin-top: 10px;
+      animation: fadeIn 2s ease forwards 0.5s;
     }
 
-    /* --- SECTIONS --- */
     section {
       padding: 80px 20px;
       max-width: 1200px;
@@ -62,7 +76,7 @@
       font-family: 'Playfair Display', serif;
       color: #0b3c2d;
       font-size: 2.2rem;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       text-align: center;
     }
 
@@ -78,19 +92,11 @@
       padding: 30px;
       box-shadow: 0 15px 35px rgba(0,0,0,0.07);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
     }
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-8px) scale(1.03);
       box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-    }
-    .card ul {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin: 0;
-    }
-    .card li {
-      margin-bottom: 12px;
-      font-weight: 500;
     }
 
     /* --- HIGHLIGHT BOX --- */
@@ -103,15 +109,14 @@
       max-width: 800px;
       margin: auto;
       font-weight: 500;
+      opacity: 0;
     }
 
-    /* --- CONTACT --- */
     .contact p {
       margin: 12px 0;
       font-weight: 500;
     }
 
-    /* --- FOOTER --- */
     footer {
       background: #0b3c2d;
       color: #fff;
@@ -119,11 +124,8 @@
       padding: 40px 20px;
       font-size: 0.95rem;
     }
-    footer p {
-      margin: 6px 0;
-    }
+    footer p { margin: 6px 0; }
 
-    /* --- WHATSAPP BUTTON --- */
     .whatsapp {
       position: fixed;
       bottom: 25px;
@@ -135,14 +137,19 @@
       font-weight: bold;
       text-decoration: none;
       box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      transition: transform 0.2s ease;
+      animation: pulse 2s infinite;
     }
     .whatsapp:hover {
       transform: translateY(-3px);
       opacity: 0.95;
     }
 
-    /* --- RESPONSIVE --- */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
     @media(max-width: 600px){
       header h1 { font-size: 2.2rem; }
       header p { font-size: 1rem; }
@@ -156,6 +163,7 @@
 
   <!-- HEADER -->
   <header>
+    <div id="particles-js"></div>
     <h1>Al-Noor Umrah Tours & Travels</h1>
     <p>“Bless Your Journey With Us”</p>
   </header>
@@ -163,32 +171,19 @@
   <!-- ABOUT US -->
   <section>
     <h2>About Us</h2>
-    <p>
-      Al-Noor Umrah Tours & Travels is your trusted partner for a smooth, comfortable,
-      and spiritually fulfilling Umrah journey. We are committed to serving pilgrims
-      with honesty, care, and excellence while guiding them to the Holy Cities of
-      Makkah and Madinah.
-    </p>
+    <p class="animate__animated animate__fadeIn">Al-Noor Umrah Tours & Travels is your trusted partner for a smooth, comfortable, and spiritually fulfilling Umrah journey. We guide pilgrims to Makkah & Madinah with care and excellence.</p>
   </section>
 
   <!-- SERVICES -->
   <section>
     <h2>Our Services</h2>
     <div class="cards">
-      <div class="card">
-        <ul>
-          <li>Umrah packages for individuals & groups</li>
-          <li>Air ticketing & hotel bookings</li>
-          <li>Visa assistance & travel insurance</li>
-        </ul>
-      </div>
-      <div class="card">
-        <ul>
-          <li>Ziyarat tours & guided services</li>
-          <li>Special care for seniors & first-time pilgrims</li>
-          <li>24/7 support throughout the journey</li>
-        </ul>
-      </div>
+      <div class="card">Umrah packages for individuals & groups</div>
+      <div class="card">Air ticketing & hotel bookings</div>
+      <div class="card">Visa assistance & travel insurance</div>
+      <div class="card">Ziyarat tours & guided services</div>
+      <div class="card">Special care for seniors & first-time pilgrims</div>
+      <div class="card">24/7 support throughout the journey</div>
     </div>
   </section>
 
@@ -196,10 +191,7 @@
   <section>
     <h2>Our Packages</h2>
     <div class="highlight">
-      <p>
-        We offer <strong>Economy, Standard, and Luxury Umrah Packages</strong> designed
-        for individuals, families, and group travelers.
-      </p>
+      <p>We offer <strong>Economy, Standard, and Luxury Umrah Packages</strong> tailored for individuals, families, and groups.</p>
       <p><strong>Pricing:</strong> Contact us for the best available offers.</p>
     </div>
   </section>
@@ -234,6 +226,55 @@
 
   <!-- WHATSAPP BUTTON -->
   <a class="whatsapp" href="https://wa.me/918186004018" target="_blank">WhatsApp Us</a>
+
+  <!-- PARTICLES JS -->
+  <script>
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {"value": 50, "density": {"enable": true, "value_area": 800}},
+        "color": {"value": "#fff"},
+        "shape": {"type": "star"},
+        "opacity": {"value": 0.5, "random": true},
+        "size": {"value": 2, "random": true},
+        "line_linked": {"enable": false},
+        "move": {"enable": true, "speed": 0.6, "direction": "none", "out_mode": "out"}
+      },
+      "interactivity": {
+        "events": {
+          "onhover": {"enable": true, "mode": "repulse"},
+          "onclick": {"enable": false}
+        }
+      },
+      "retina_detect": true
+    });
+
+    // Animate cards & highlight on scroll
+    const cards = document.querySelectorAll('.card');
+    const highlight = document.querySelector('.highlight');
+
+    function animateOnScroll() {
+      const triggerBottom = window.innerHeight / 5 * 4;
+
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if(cardTop < triggerBottom){
+          card.style.opacity = 1;
+          card.classList.add('animate__animated', 'animate__fadeInUp');
+        }
+      });
+
+      if(highlight){
+        const hlTop = highlight.getBoundingClientRect().top;
+        if(hlTop < triggerBottom){
+          highlight.style.opacity = 1;
+          highlight.classList.add('animate__animated', 'animate__fadeInUp');
+        }
+      }
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
 
 </body>
 </html>
