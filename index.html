@@ -5,216 +5,112 @@
 <title>Al-Noor Umrah Tours & Travels</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #f4f6f8;
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif}
+html{scroll-behavior:smooth}
+body{background:#f5f5f5;color:#222}
+
+/* NAVBAR */
+nav{
+  position:fixed;top:0;width:100%;
+  background:rgba(0,0,0,.85);
+  display:flex;justify-content:space-between;
+  align-items:center;padding:15px 40px;
+  z-index:1000
+}
+nav h1{color:#fff;font-size:22px}
+nav ul{list-style:none;display:flex;gap:25px;flex-wrap:wrap}
+nav ul li{position:relative}
+nav ul li a{
+  color:#fff;text-decoration:none;font-weight:500;
+  white-space:nowrap
+}
+nav ul li:hover ul{display:block}
+
+/* DROPDOWN */
+nav ul li ul{
+  display:none;position:absolute;
+  background:#000;top:30px;
+  list-style:none;padding:10px
+}
+nav ul li ul li{padding:5px 10px}
+
+/* HERO SLIDESHOW */
+.hero{
+  height:100vh;display:flex;
+  justify-content:center;align-items:center;
+  text-align:center;color:#fff;
+  background-size:cover;
+  background-position:center;
+  animation:slide 20s infinite;
+}
+@keyframes slide{
+  0%{background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("mecca1.jpg")}
+  25%{background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("mecca2.jpg")}
+  50%{background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("madina1.jpg")}
+  75%{background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("madina2.jpg")}
+  100%{background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("mecca1.jpg")}
 }
 
-/* ================= NAVBAR ================= */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.75);
-  padding: 14px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
+.hero h2{font-size:48px;margin-bottom:15px}
+.hero p{font-size:20px;margin-bottom:25px}
+.hero button{
+  padding:14px 35px;
+  border:none;border-radius:30px;
+  background:#ffd000;font-size:16px;
+  cursor:pointer;font-weight:bold
 }
 
-nav h2 {
-  color: #fff;
-  margin: 0;
+/* SECTIONS */
+section{padding:80px 40px}
+section h2{text-align:center;margin-bottom:40px}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px
+}
+.card{
+  background:#fff;padding:20px;
+  border-radius:12px;text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,.1)
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
+/* BOOKING MODAL */
+.modal{
+  display:none;position:fixed;
+  inset:0;background:rgba(0,0,0,.6);
+  justify-content:center;align-items:center;
+  z-index:2000
+}
+.modal-content{
+  background:#fff;padding:30px;
+  width:90%;max-width:400px;
+  border-radius:10px;position:relative
+}
+.modal-content h3{text-align:center;margin-bottom:20px}
+.modal-content input,select{
+  width:100%;padding:10px;margin-bottom:10px
+}
+.close{
+  position:absolute;top:10px;right:15px;
+  cursor:pointer;font-size:18px
 }
 
-nav ul li {
-  position: relative;
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;bottom:20px;right:20px;
+  background:#25d366;color:#fff;
+  padding:12px 18px;border-radius:50px;
+  text-decoration:none;font-weight:bold
 }
 
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-nav ul li:hover ul {
-  display: block;
-}
-
-/* Dropdown */
-nav ul li ul {
-  display: none;
-  position: absolute;
-  top: 35px;
-  left: 0;
-  background: #111;
-  border-radius: 8px;
-  min-width: 180px;
-}
-
-nav ul li ul li {
-  padding: 10px 15px;
-}
-
-nav ul li ul li a {
-  color: #fff;
-}
-
-/* ================= HERO SLIDESHOW ================= */
-.hero {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  animation: slide 15s infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-@keyframes slide {
-  0% {
-    background-image:
-      linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-      url("https://upload.wikimedia.org/wikipedia/commons/5/5c/Great_Mosque_of_Mecca1.jpg");
-  }
-  50% {
-    background-image:
-      linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-      url("https://upload.wikimedia.org/wikipedia/commons/3/3f/Al-Masjid_an-Nabawi_Madinah.jpg");
-  }
-  100% {
-    background-image:
-      linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-      url("https://upload.wikimedia.org/wikipedia/commons/5/5c/Great_Mosque_of_Mecca1.jpg");
-  }
-}
-
-.hero-content {
-  color: white;
-  animation: fadeUp 1.2s ease;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-}
-
-.hero-content button {
-  margin-top: 20px;
-  padding: 14px 35px;
-  background: #f4c430;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* ================= SECTIONS ================= */
-section {
-  padding: 90px 40px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #0b2d3a;
-}
-
-/* Cards */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 25px;
-}
-
-.card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.08);
-  text-align: center;
-  animation: fadeUp 1s ease;
-}
-
-/* ================= MODAL ================= */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.7);
-  z-index: 2000;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 30px;
-  width: 90%;
-  max-width: 420px;
-  border-radius: 12px;
-  position: relative;
-  animation: fadeUp .4s ease;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  font-size: 26px;
-  cursor: pointer;
-}
-
-.modal-content input,
-.modal-content select,
-.modal-content textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-}
-
-.modal-content button {
-  width: 100%;
-  padding: 12px;
-  background: #25D366;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  background: #0b2d3a;
-  color: white;
-  text-align: center;
-  padding: 30px;
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{flex-direction:column;align-items:flex-start}
+  nav ul{width:100%;justify-content:space-around;margin-top:10px}
+  .hero h2{font-size:34px}
 }
 </style>
 </head>
@@ -222,107 +118,93 @@ footer {
 <body>
 
 <nav>
-  <h2>Al-Noor Umrah</h2>
+<h1>Al-Noor Umrah</h1>
+<ul>
+<li><a href="#home">Home</a></li>
+<li>
+  <a href="#">Umrah & Ziyarat ▾</a>
   <ul>
-    <li><a href="#home">Home</a></li>
-    <li>
-      <a href="#">Umrah & Ziyarat ▾</a>
-      <ul>
-        <li><a href="#services">Local Ziyarat</a></li>
-        <li><a href="#services">Taif Ziyarat</a></li>
-        <li><a href="#services">Badr Ziyarat</a></li>
-      </ul>
-    </li>
-    <li><a href="#packages">Packages</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#services">Umrah Services</a></li>
+    <li><a href="#services">Local Ziyarat</a></li>
+    <li><a href="#services">Taif Ziyarat</a></li>
+    <li><a href="#services">Badr Ziyarat</a></li>
   </ul>
+</li>
+<li><a href="#packages">Packages</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero" id="home">
-  <div class="hero-content">
-    <h1>Al-Noor Umrah Tours & Travels</h1>
+  <div>
+    <h2>Al-Noor Umrah Tours & Travels</h2>
     <p>“Bless Your Journey With Us”</p>
-    <button onclick="openBooking()">Book Your Umrah Now</button>
+    <button onclick="openForm()">Book Your Umrah Now</button>
   </div>
 </div>
 
-<!-- SERVICES -->
 <section id="services">
-<h2>What We Offer</h2>
+<h2>What Do We Offer?</h2>
 <div class="cards">
-  <div class="card">✈ Round Trip Flights</div>
-  <div class="card">🚌 Luxury Bus Transport</div>
-  <div class="card">🏨 3★ / 5★ Hotels</div>
-  <div class="card">🍽 Indian Food (Unlimited)</div>
-  <div class="card">🕋 Umrah Kit</div>
-  <div class="card">🛂 Visa + Health Insurance</div>
-  <div class="card">📿 Local Ziyarat</div>
-  <div class="card">🚌 Taif Ziyarat</div>
-  <div class="card">⚔️ Badr Ziyarat</div>
-  <div class="card">🌙 Riyazul Jannah</div>
-  <div class="card">🕌 Quba Masjid</div>
-  <div class="card">💧 5L Zam Zam Water</div>
+<div class="card">✈ Round Trip Flights</div>
+<div class="card">🚌 Luxury Bus Transport</div>
+<div class="card">🏨 3★ / 5★ Hotels</div>
+<div class="card">🍽 Indian Food (Unlimited)</div>
+<div class="card">🕋 Umrah Kit</div>
+<div class="card">🛂 Visa + Health Insurance</div>
+<div class="card">📿 Local Ziyarat</div>
+<div class="card">🚌 Taif Ziyarat</div>
+<div class="card">⚔️ Badr Ziyarat</div>
+<div class="card">🌙 Riyazul Jannah</div>
+<div class="card">🕌 Quba Masjid</div>
+<div class="card">💧 5L Zam Zam Water</div>
 </div>
 </section>
 
-<!-- PACKAGES -->
 <section id="packages">
-<h2>Our Packages</h2>
+<h2>Our Umrah Packages</h2>
 <div class="cards">
-  <div class="card">Economy Umrah Package</div>
-  <div class="card">Standard Umrah Package</div>
-  <div class="card">Luxury Umrah Package</div>
+<div class="card">Economy Package</div>
+<div class="card">Standard Package</div>
+<div class="card">Luxury Package</div>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
 <h2>Contact Us</h2>
-<p>Email: AlNOORUMRAHTRAVEL@GMAIL.COM</p>
-<p>Phone: +91 8186004018</p>
-<p>Nellore, Andhra Pradesh, India</p>
+<p style="text-align:center">
+Email: ALNOORUMRAHTRAVEL@GMAIL.COM<br>
+Phone: +91 8186004018<br>
+Nellore, Andhra Pradesh, India
+</p>
 </section>
 
-<footer>
-© 2026 Al-Noor Umrah Tours & Travels
-</footer>
-
-<!-- BOOKING MODAL -->
-<div id="bookingModal" class="modal" onclick="closeModal(event)">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeBooking()">×</span>
-    <h2>Book Your Umrah</h2>
-    <input id="bname" placeholder="Full Name">
-    <input id="bphone" placeholder="Mobile Number">
-    <select id="bpackage">
-      <option>Economy</option>
-      <option>Standard</option>
-      <option>Luxury</option>
-    </select>
-    <textarea id="bmsg" placeholder="Message"></textarea>
-    <button onclick="sendWhatsApp()">Submit via WhatsApp</button>
-  </div>
+<!-- BOOKING FORM -->
+<div class="modal" id="booking">
+<div class="modal-content">
+<span class="close" onclick="closeForm()">✖</span>
+<h3>Book Umrah</h3>
+<input placeholder="Full Name">
+<input placeholder="Phone Number">
+<input placeholder="Email">
+<select>
+<option>Select Package</option>
+<option>Economy</option>
+<option>Standard</option>
+<option>Luxury</option>
+</select>
+<button style="width:100%;padding:10px;background:#ffd000;border:none">Submit</button>
+</div>
 </div>
 
-<script>
-function openBooking() {
-  document.getElementById("bookingModal").style.display = "flex";
-}
-function closeBooking() {
-  document.getElementById("bookingModal").style.display = "none";
-}
-function closeModal(e) {
-  if (e.target.id === "bookingModal") closeBooking();
-}
-function sendWhatsApp() {
-  let text =
-    "Name: " + bname.value +
-    "\nPhone: " + bphone.value +
-    "\nPackage: " + bpackage.value +
-    "\nMessage: " + bmsg.value;
+<a class="whatsapp" href="https://wa.me/918186004018" target="_blank">WhatsApp</a>
 
-  window.open("https://wa.me/918186004018?text=" + encodeURIComponent(text));
+<script>
+function openForm(){document.getElementById("booking").style.display="flex"}
+function closeForm(){document.getElementById("booking").style.display="none"}
+window.onclick=function(e){
+  let m=document.getElementById("booking");
+  if(e.target==m)m.style.display="none";
 }
 </script>
 
