@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al-Noor Umrah Tours & Travels</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+}
+
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  background: #0b2d3a;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+nav h2 {
+  color: white;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  color: #f4c430;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+  url("https://images.unsplash.com/photo-1548013146-72479768bada");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.hero a {
+  margin-top: 20px;
+  padding: 14px 35px;
+  background: #f4c430;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+}
+
+/* SECTIONS */
+section {
+  padding: 70px 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  color: #0b2d3a;
+  margin-bottom: 40px;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+/* FOOTER */
+footer {
+  background: #0b2d3a;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h2>Al-Noor Umrah</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <h1>Al-Noor Umrah Tours & Travels</h1>
+  <p>“Bless Your Journey With Us”</p>
+  <a href="#contact">Book Your Umrah Now</a>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>What Do We Offer?</h2>
+  <div class="cards">
+    <div class="card">✈ Round Trip Flight</div>
+    <div class="card">🚌 Luxury Bus</div>
+    <div class="card">🏨 3★ / 5★ Hotels</div>
+    <div class="card">🍽 Indian Food (Unlimited)</div>
+    <div class="card">🕋 Umrah Kit & Ziyarat</div>
+    <div class="card">🛂 Visa + Health Insurance</div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <h2>Our Umrah Packages</h2>
+  <div class="cards">
+    <div class="card">Economy Umrah Package</div>
+    <div class="card">Standard Umrah Package</div>
+    <div class="card">Luxury Umrah Package</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="card">
+    <p><strong>Email:</strong> AlNOORUMRAHTRAVEL@GMAIL.COM</p>
+    <p><strong>Phone:</strong> +91 8186004018</p>
+    <p><strong>Address:</strong> Nellore, Andhra Pradesh, India</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Al-Noor Umrah Tours & Travels
+</footer>
+
+<a class="whatsapp" href="https://wa.me/918186004018" target="_blank">WhatsApp</a>
+
+</body>
+</html>
