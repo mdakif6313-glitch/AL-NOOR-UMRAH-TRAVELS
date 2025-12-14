@@ -1,123 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Al-Noor Umrah Tours & Travels</title>
-
+  
+  <!-- Google Fonts for a modern, classy look -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
   <style>
+    /* --- BODY --- */
     body {
       margin: 0;
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      background: linear-gradient(180deg, #ffffff 0%, #f2f5f8 100%);
-      color: #2c2c2c;
-      letter-spacing: 0.2px;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(180deg, #f7f9fa 0%, #e8edf2 100%);
+      color: #333;
+      line-height: 1.6;
     }
 
+    /* --- HEADER --- */
     header {
       background: linear-gradient(135deg, #0b3c2d, #145a42);
-      color: #ffffff;
-      padding: 70px 20px;
+      color: #fff;
+      padding: 90px 20px;
       text-align: center;
-      border-bottom: 4px solid #c9a14a;
+      position: relative;
+      overflow: hidden;
     }
-
+    header::after {
+      content: "";
+      background: url('https://i.ibb.co/k0K9s5k/islamic-pattern.png') no-repeat center center;
+      background-size: cover;
+      opacity: 0.05;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: 1;
+    }
     header h1 {
-      font-size: 2.6rem;
-      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 15px;
+      z-index: 2;
+      position: relative;
+    }
+    header p {
+      font-size: 1.2rem;
+      z-index: 2;
+      position: relative;
     }
 
-    header p {
-      font-size: 1.1rem;
+    /* --- SECTIONS --- */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #0b3c2d;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* --- CARDS --- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+    .card ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+    .card li {
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    /* --- HIGHLIGHT BOX --- */
+    .highlight {
+      background: #fff;
+      border-left: 6px solid #c9a14a;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      max-width: 800px;
+      margin: auto;
+      font-weight: 500;
+    }
+
+    /* --- CONTACT --- */
+    .contact p {
+      margin: 12px 0;
+      font-weight: 500;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: #0b3c2d;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.95rem;
+    }
+    footer p {
+      margin: 6px 0;
+    }
+
+    /* --- WHATSAPP BUTTON --- */
+    .whatsapp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: #fff;
+      padding: 16px 22px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      transition: transform 0.2s ease;
+    }
+    .whatsapp:hover {
+      transform: translateY(-3px);
       opacity: 0.95;
     }
 
-    section {
-      padding: 70px 20px;
-      max-width: 1100px;
-      margin: auto;
+    /* --- RESPONSIVE --- */
+    @media(max-width: 600px){
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1rem; }
+      h2 { font-size: 1.8rem; }
     }
 
-    h2 {
-      color: #0b3c2d;
-      margin-bottom: 25px;
-      font-size: 1.9rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      border: 1px solid #eef1f4;
-    }
-
-    .card ul {
-      padding-left: 18px;
-      margin: 0;
-    }
-
-    .card li {
-      margin-bottom: 10px;
-    }
-
-    .highlight {
-      background: #ffffff;
-      border-left: 6px solid #c9a14a;
-      padding: 28px;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
-    }
-
-    footer {
-      background: #0b3c2d;
-      color: #ffffff;
-      text-align: center;
-      padding: 35px 20px;
-      margin-top: 40px;
-    }
-
-    footer p {
-      margin: 8px 0;
-      font-size: 0.95rem;
-    }
-
-    .contact p {
-      margin: 10px 0;
-    }
-
-    .whatsapp {
-      position: fixed;
-      bottom: 22px;
-      right: 22px;
-      background-color: #25d366;
-      color: #ffffff;
-      padding: 15px 22px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
-    }
-
-    .whatsapp:hover {
-      opacity: 0.9;
-    }
   </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <h1>Al-Noor Umrah Tours & Travels</h1>
     <p>“Bless Your Journey With Us”</p>
   </header>
 
+  <!-- ABOUT US -->
   <section>
     <h2>About Us</h2>
     <p>
@@ -128,6 +171,7 @@
     </p>
   </section>
 
+  <!-- SERVICES -->
   <section>
     <h2>Our Services</h2>
     <div class="cards">
@@ -138,7 +182,6 @@
           <li>Visa assistance & travel insurance</li>
         </ul>
       </div>
-
       <div class="card">
         <ul>
           <li>Ziyarat tours & guided services</li>
@@ -149,6 +192,7 @@
     </div>
   </section>
 
+  <!-- PACKAGES -->
   <section>
     <h2>Our Packages</h2>
     <div class="highlight">
@@ -160,6 +204,7 @@
     </div>
   </section>
 
+  <!-- WHY CHOOSE US -->
   <section>
     <h2>Why Choose Us</h2>
     <div class="cards">
@@ -170,6 +215,7 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section>
     <h2>Contact Us</h2>
     <div class="contact">
@@ -180,14 +226,14 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2026 Al-Noor Umrah Tours & Travels. All Rights Reserved.</p>
     <p>May your journey be blessed and spiritually fulfilling.</p>
   </footer>
 
-  <a class="whatsapp" href="https://wa.me/918186004018" target="_blank">
-    WhatsApp Us
-  </a>
+  <!-- WHATSAPP BUTTON -->
+  <a class="whatsapp" href="https://wa.me/918186004018" target="_blank">WhatsApp Us</a>
 
 </body>
 </html>
