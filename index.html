@@ -1,215 +1,150 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Al-Noor Umrah Tours & Travels</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#fff;color:#222}
-
-/* NAVBAR */
-header{
-  position:fixed;top:0;width:100%;z-index:1000;
-  background:#fff;padding:15px 50px;
-  display:flex;justify-content:space-between;align-items:center;
-  box-shadow:0 2px 10px rgba(0,0,0,.1)
-}
-header h1{color:#0a6d3b;font-size:22px}
-nav a{
-  margin-left:20px;text-decoration:none;
-  color:#333;font-weight:bold
-}
-nav a:hover{color:#0a6d3b}
-
-/* HERO */
-.hero{
-  height:100vh;
-  animation:slide 20s infinite;
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding-top:80px
-}
-.hero-content{
-  background:rgba(0,0,0,.55);
-  padding:40px;border-radius:10px;
-  color:#fff;max-width:800px
-}
-.hero-content h2{font-size:38px;margin-bottom:15px}
-.hero-content p{font-size:18px;margin-bottom:25px}
-.hero-content button{
-  padding:15px 30px;
-  background:#0a6d3b;border:none;color:#fff;
-  font-size:18px;cursor:pointer;border-radius:5px
-}
-.hero-content button:hover{background:#085c31}
-
-/* SLIDESHOW */
-@keyframes slide{
-  0%{background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("https://images.pexels.com/photos/35084982/pexels-photo-35084982.jpeg
-")}
-  25%{background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("https://images.pexels.com/photos/6476996/pexels-photo-6476996.jpeg
-")}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al-Noor Umrah Tours & Travels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+    body { background: #0b1c1f; color: #ffffff; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }header {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url('https://images.unsplash.com/photo-1543340713-8e4eb7f3c1a3') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: zoomBg 20s infinite alternate;
 }
 
-/* SECTIONS */
-section{padding:80px 50px}
-/* Titles */
-section h2{text-align:center;color:#0a6d3b;margin-bottom:40px;font-size:32px}
+@keyframes zoomBg { from { background-size: 100%; } to { background-size: 110%; } }
 
-/* SERVICES CARDS */
-.services{
-  display:grid;
-  gap:25px;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-}
-.card{
-  border:1px solid #ddd;
-  border-radius:10px;
-  overflow:hidden;
-  text-align:center;
-  box-shadow:0 5px 15px rgba(0,0,0,.1);
-  padding:20px
-}
-.card img{width:100%;height:180px;object-fit:cover;margin-bottom:10px}
-.card h3{font-size:18px;color:#0a6d3b}
+header h1 { font-size: 3rem; margin-bottom: 10px; }
+header p { font-size: 1.2rem; margin-bottom: 20px; }
+.btn { background: #d4af37; color: #000; padding: 12px 25px; border-radius: 30px; font-weight: 600; }
 
-/* BOOKING MODAL */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  justify-content:center;
-  align-items:center;
-  z-index:2000
-}
-.modal-box{
-  background:#fff;
-  width:90%;max-width:450px;
-  padding:30px;
-  border-radius:10px;
-  position:relative
-}
-.modal-box h3{text-align:center;margin-bottom:20px;color:#0a6d3b}
-.modal-box input{
-  width:100%;
-  padding:12px;
-  margin-bottom:12px;
-  border:1px solid #ccc;border-radius:5px
-}
-.modal-box button{
-  width:100%;
-  padding:12px;
-  background:#0a6d3b;
-  border:none;color:#fff;
-  font-size:16px;border-radius:5px;
-  cursor:pointer
-}
-.close{
-  position:absolute;top:10px;right:15px;
-  font-size:22px;cursor:pointer
+section { padding: 70px 8%; }
+.section-title { text-align: center; margin-bottom: 40px; }
+.section-title h2 { font-size: 2.2rem; color: #d4af37; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+
+.card {
+  background: #112d32;
+  padding: 25px;
+  border-radius: 15px;
+  transition: transform 0.4s, box-shadow 0.4s;
 }
 
-/* FOOTER */
-footer{
-  background:#0a6d3b;
-  color:#fff;
-  text-align:center;
-  padding:20px
+.card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+
+.card h3 { color: #d4af37; margin-bottom: 15px; }
+
+.toggle-content { display: none; margin-top: 15px; font-size: 0.95rem; }
+
+.card button {
+  margin-top: 15px;
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
 }
-</style>
+
+.pricing { text-align: center; }
+.price { font-size: 1.8rem; color: #d4af37; margin-top: 10px; }
+
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.gallery img { width: 100%; border-radius: 15px; height: 220px; object-fit: cover; animation: float 6s ease-in-out infinite; }
+
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+footer { background: #081417; padding: 40px 8%; text-align: center; }
+
+.whatsapp {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #25D366; color: #fff;
+  padding: 14px 20px; border-radius: 50px;
+  font-weight: 600;
+}
+
+  </style>
 </head>
-
-<body>
-
-<header>
-  <h1>Al-Noor Umrah Tours & Travels</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#packages">Packages</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<div class="hero">
-  <div class="hero-content">
-    <h2>Bless Your Journey With Us</h2>
-    <p>Experience a safe, spiritual & complete Umrah package</p>
-    <button onclick="openForm()">Book Your Umrah Now</button>
+<body><header>
+  <div>
+    <h1>Al-Noor Umrah Tours & Travels</h1>
+    <p>“Bless Your Journey With Us”</p>
+    <a class="btn" href="https://wa.me/918186004018">Book on WhatsApp</a>
   </div>
-</div>
-
-<section id="services">
-  <h2>What We Offer</h2>
-  <div class="services">
-    <div class="card"><h3>Round Trip Flights</h3></div>
-    <div class="card"><h3>Luxury Transport</h3></div>
-    <div class="card"><h3>Hotels 3★ / 5★</h3></div>
-    <div class="card"><h3>Indian Food Unlimited</h3></div>
-    <div class="card"><h3>Umrah Kit</h3></div>
-    <div class="card"><h3>Visa + Health Insurance</h3></div>
+</header><section>
+  <div class="section-title"><h2>What We Offer</h2></div>
+  <div class="grid">
+    <div class="card">Round trip flight ✈</div>
+    <div class="card">Luxury bus 🚌</div>
+    <div class="card">Hotel 🏨 (3 Star / 5 Star)</div>
+    <div class="card">Indian Food (Breakfast / Lunch / Dinner) Unlimited</div>
+    <div class="card">Umrah Kit</div>
+    <div class="card">5 Liters Zam Zam Water</div>
   </div>
-</section>
-
-<section id="packages">
-  <h2>Our Umrah Packages</h2>
-  <div class="services">
-
+</section><section>
+  <div class="section-title"><h2>Ziyarat Options</h2></div>
+  <div class="grid">
     <div class="card">
-      <h3>Economy Umrah Package</h3>
-      <p style="font-size:20px;font-weight:bold;color:#0a6d3b;">₹95,000</p>
-      <button onclick="openForm()" style="padding:10px 20px;background:#0a6d3b;color:#fff;border:none;border-radius:5px;cursor:pointer;">Book Now</button>
+      <h3>Local Ziyarat</h3>
+      <button onclick="toggle(this)">View Options</button>
+      <div class="toggle-content">Individual Ziyarat<br>Group Ziyarat</div>
     </div>
-
     <div class="card">
-      <h3>Standard Umrah Package</h3>
-      <p style="font-size:20px;font-weight:bold;color:#0a6d3b;">₹95,000</p>
-      <button onclick="openForm()" style="padding:10px 20px;background:#0a6d3b;color:#fff;border:none;border-radius:5px;cursor:pointer;">Book Now</button>
+      <h3>Taif Ziyarat</h3>
+      <button onclick="toggle(this)">View Options</button>
+      <div class="toggle-content">Individual Ziyarat<br>Group Ziyarat</div>
     </div>
-
     <div class="card">
-      <h3>Luxury Umrah Package</h3>
-      <p style="font-size:20px;font-weight:bold;color:#0a6d3b;">₹95,000</p>
-      <button onclick="openForm()" style="padding:10px 20px;background:#0a6d3b;color:#fff;border:none;border-radius:5px;cursor:pointer;">Book Now</button>
+      <h3>Badr Ziyarat</h3>
+      <button onclick="toggle(this)">View Options</button>
+      <div class="toggle-content">Individual Ziyarat<br>Group Ziyarat</div>
     </div>
-
+    <div class="card">
+      <h3>Madinah Ziyarat</h3>
+      <button onclick="toggle(this)">View Options</button>
+      <div class="toggle-content">Riyazul Jannah<br>Quba Masjid</div>
+    </div>
   </div>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p style="text-align:center;margin-bottom:10px;">📞 +91 8186004018</p>
-  <p style="text-align:center;">✉ alnoorumrah@email.com</p>
-</section>
-
-<!-- BOOKING MODAL -->
-<div class="modal" id="formModal">
-  <div class="modal-box">
-    <span class="close" onclick="closeForm()">×</span>
-    <h3>Book Your Umrah</h3>
-    <input placeholder="Full Name">
-    <input placeholder="Phone Number">
-    <input placeholder="Email">
-    <input placeholder="Preferred Travel Date">
-    <button>Submit Booking</button>
+</section><section>
+  <div class="section-title"><h2>Umrah Types</h2></div>
+  <div class="grid">
+    <div class="card">Group</div>
+    <div class="card">Individual</div>
+    <div class="card">Bachelor</div>
+    <div class="card">Kids</div>
   </div>
-</div>
-
-<footer>
-<p>© 2025 Al-Noor Umrah Tours & Travels</p>
-</footer>
+</section><section>
+  <div class="section-title"><h2>Pricing</h2></div>
+  <div class="grid pricing">
+    <div class="card"><h3>Economy</h3><div class="price">₹95,000</div></div>
+    <div class="card"><h3>Standard</h3><div class="price">₹1,05,000</div></div>
+    <div class="card"><h3>Premium</h3><div class="price">₹1,35,000</div></div>
+  </div>
+  <p style="margin-top:20px;">Complimentary: Visa with Health Insurance</p>
+</section><section>
+  <div class="section-title"><h2>Makkah & Madinah</h2></div>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1589308078059-f1b7e0c2f1a1" />
+    <img src="https://images.unsplash.com/photo-1600411838446-d4a2f1f7d8b3" />
+    <img src="https://images.unsplash.com/photo-1591608516484-ecf6a78f7d2e" />
+  </div>
+</section><footer>
+  <p>Email: ALNOORUMRAHTRAVEL@GMAIL.COM</p>
+  <p>Phone / WhatsApp: +91 8186004018</p>
+  <p>Nellore, Andhra Pradesh, India</p>
+</footer><a class="whatsapp" href="https://wa.me/918186004018">WhatsApp</a>
 
 <script>
-function openForm(){document.getElementById("formModal").style.display="flex"}
-function closeForm(){document.getElementById("formModal").style.display="none"}
-</script>
-
-</body>
+  function toggle(btn) {
+    const content = btn.nextElementSibling;
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  }
+</script></body>
 </html>
