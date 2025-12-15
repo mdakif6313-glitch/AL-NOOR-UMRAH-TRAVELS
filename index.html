@@ -2,118 +2,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Al-Noor Umrah Tours & Travels</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-    body { background: #0b1c1f; color: #ffffff; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }header {
-  height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-  url('https://images.unsplash.com/photo-1543340713-8e4eb7f3c1a3') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  animation: zoomBg 20s infinite alternate;
-}
+  <title>Al-Noor Umrah Tours & Travels</title>  <!-- Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background: #0b1c1f; color: #fff; }
+    h1, h2, h3 { font-weight: 600; }
 
-@keyframes zoomBg { from { background-size: 100%; } to { background-size: 110%; } }
+    /* HERO */
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+      url('https://upload.wikimedia.org/wikipedia/commons/5/5c/Great_Mosque_of_Mecca1.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      animation: zoom 20s infinite alternate;
+    }
+    @keyframes zoom { from { background-size: 100%; } to { background-size: 110%; } }
 
-header h1 { font-size: 3rem; margin-bottom: 10px; }
-header p { font-size: 1.2rem; margin-bottom: 20px; }
-.btn { background: #d4af37; color: #000; padding: 12px 25px; border-radius: 30px; font-weight: 600; }
+    header h1 { font-size: 3rem; margin-bottom: 10px; }
+    header p { font-size: 1.2rem; margin-bottom: 25px; }
 
-section { padding: 70px 8%; }
-.section-title { text-align: center; margin-bottom: 40px; }
-.section-title h2 { font-size: 2.2rem; color: #d4af37; }
+    .btn { background: #d4af37; color: #000; padding: 12px 30px; border-radius: 30px; font-weight: 600; }
 
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    section { padding: 80px 8%; }
+    .title { text-align: center; margin-bottom: 50px; }
+    .title h2 { color: #d4af37; font-size: 2.3rem; }
 
-.card {
-  background: #112d32;
-  padding: 25px;
-  border-radius: 15px;
-  transition: transform 0.4s, box-shadow 0.4s;
-}
+    /* GRID */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
 
-.card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+    .card {
+      background: #112d32;
+      padding: 25px;
+      border-radius: 18px;
+      transition: 0.4s;
+    }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+    .card h3 { color: #d4af37; margin-bottom: 15px; }
 
-.card h3 { color: #d4af37; margin-bottom: 15px; }
+    /* TOGGLE */
+    .toggle-content { display: none; margin-top: 15px; font-size: 0.95rem; }
+    .toggle-btn { margin-top: 15px; background: transparent; border: 1px solid #d4af37; color: #d4af37; padding: 8px 20px; border-radius: 20px; cursor: pointer; }
 
-.toggle-content { display: none; margin-top: 15px; font-size: 0.95rem; }
+    /* PRICING */
+    .price { font-size: 1.8rem; color: #d4af37; margin-top: 10px; }
 
-.card button {
-  margin-top: 15px;
-  background: transparent;
-  border: 1px solid #d4af37;
-  color: #d4af37;
-  padding: 8px 18px;
-  border-radius: 20px;
-  cursor: pointer;
-}
+    /* GALLERY */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 18px; animation: float 6s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-.pricing { text-align: center; }
-.price { font-size: 1.8rem; color: #d4af37; margin-top: 10px; }
+    footer { background: #081417; padding: 40px 8%; text-align: center; }
 
-.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.gallery img { width: 100%; border-radius: 15px; height: 220px; object-fit: cover; animation: float 6s ease-in-out infinite; }
+    .whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: #fff; padding: 14px 22px; border-radius: 50px; font-weight: 600; }
 
-@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    /* LANGUAGE BUTTONS */
+    .lang { position: fixed; top: 20px; right: 20px; }
+    .lang button { margin-left: 5px; padding: 6px 12px; border-radius: 12px; border: none; cursor: pointer; }
 
-footer { background: #081417; padding: 40px 8%; text-align: center; }
-
-.whatsapp {
-  position: fixed; bottom: 20px; right: 20px;
-  background: #25D366; color: #fff;
-  padding: 14px 20px; border-radius: 50px;
-  font-weight: 600;
-}
-
-  </style>
-</head>
-<body><header>
+    form input, form select {
+      width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; border: none;
+    }
+  </style></head>
+<body><div class="lang">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('hi')">HI</button>
+  <button onclick="setLang('ur')">UR</button>
+</div><header>
   <div>
-    <h1>Al-Noor Umrah Tours & Travels</h1>
-    <p>“Bless Your Journey With Us”</p>
-    <a class="btn" href="https://wa.me/918186004018">Book on WhatsApp</a>
+    <h1 id="t1">Al-Noor Umrah Tours & Travels</h1>
+    <p id="t2">Bless Your Journey With Us</p>
+    <a class="btn" href="https://wa.me/918186004018?text=I%20want%20to%20book%20Umrah">Book on WhatsApp</a>
   </div>
 </header><section>
-  <div class="section-title"><h2>What We Offer</h2></div>
+  <div class="title"><h2 id="t3">What We Offer</h2></div>
   <div class="grid">
-    <div class="card">Round trip flight ✈</div>
-    <div class="card">Luxury bus 🚌</div>
+    <div class="card">Round Trip Flight ✈</div>
+    <div class="card">Luxury Bus 🚌</div>
     <div class="card">Hotel 🏨 (3 Star / 5 Star)</div>
     <div class="card">Indian Food (Breakfast / Lunch / Dinner) Unlimited</div>
     <div class="card">Umrah Kit</div>
+    <div class="card">Local Ziyarat • Taif • Badr • Madinah</div>
+    <div class="card">Riyazul Jannah & Quba Masjid</div>
     <div class="card">5 Liters Zam Zam Water</div>
+    <div class="card">Complimentary: Visa with Health Insurance</div>
   </div>
 </section><section>
-  <div class="section-title"><h2>Ziyarat Options</h2></div>
+  <div class="title"><h2>Ziyarat Variants</h2></div>
   <div class="grid">
-    <div class="card">
-      <h3>Local Ziyarat</h3>
-      <button onclick="toggle(this)">View Options</button>
-      <div class="toggle-content">Individual Ziyarat<br>Group Ziyarat</div>
-    </div>
-    <div class="card">
-      <h3>Taif Ziyarat</h3>
-      <button onclick="toggle(this)">View Options</button>
-      <div class="toggle-content">Individual Ziyarat<br>Group Ziyarat</div>
-    </div>
-    <div class="card">
-      <h3>Badr Ziyarat</h3>
-      <button onclick="toggle(this)">View Options</button>
-      <div class="toggle-content">Individual Ziyarat<br>Group Ziyarat</div>
-    </div>
-    <div class="card">
-      <h3>Madinah Ziyarat</h3>
-      <button onclick="toggle(this)">View Options</button>
-      <div class="toggle-content">Riyazul Jannah<br>Quba Masjid</div>
-    </div>
+    <div class="card"><h3>Local Ziyarat</h3><button class="toggle-btn" onclick="toggle(this)">View</button><div class="toggle-content">Individual Ziyarat<br>Group Ziyarat</div></div>
+    <div class="card"><h3>Taif Ziyarat</h3><button class="toggle-btn" onclick="toggle(this)">View</button><div class="toggle-content">Masjid Abdullah Ibn Abbas<br>Historic Taif</div></div>
+    <div class="card"><h3>Badr Ziyarat</h3><button class="toggle-btn" onclick="toggle(this)">View</button><div class="toggle-content">Battlefield of Badr</div></div>
+    <div class="card"><h3>Madinah</h3><button class="toggle-btn" onclick="toggle(this)">View</button><div class="toggle-content">Riyazul Jannah<br>Quba Masjid</div></div>
   </div>
 </section><section>
-  <div class="section-title"><h2>Umrah Types</h2></div>
+  <div class="title"><h2>Umrah Types</h2></div>
   <div class="grid">
     <div class="card">Group</div>
     <div class="card">Individual</div>
@@ -121,20 +107,29 @@ footer { background: #081417; padding: 40px 8%; text-align: center; }
     <div class="card">Kids</div>
   </div>
 </section><section>
-  <div class="section-title"><h2>Pricing</h2></div>
-  <div class="grid pricing">
+  <div class="title"><h2>Pricing</h2></div>
+  <div class="grid">
     <div class="card"><h3>Economy</h3><div class="price">₹95,000</div></div>
     <div class="card"><h3>Standard</h3><div class="price">₹1,05,000</div></div>
     <div class="card"><h3>Premium</h3><div class="price">₹1,35,000</div></div>
   </div>
-  <p style="margin-top:20px;">Complimentary: Visa with Health Insurance</p>
 </section><section>
-  <div class="section-title"><h2>Makkah & Madinah</h2></div>
+  <div class="title"><h2>Makkah & Madinah Gallery</h2></div>
   <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1589308078059-f1b7e0c2f1a1" />
-    <img src="https://images.unsplash.com/photo-1600411838446-d4a2f1f7d8b3" />
-    <img src="https://images.unsplash.com/photo-1591608516484-ecf6a78f7d2e" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Great_Mosque_of_Mecca.jpg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Al-Masjid_an-Nabawi_Medina.jpg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Kaaba_Masjid_Haram_Makkah.jpg">
   </div>
+</section><section>
+  <div class="title"><h2>Quick Booking</h2></div>
+  <form onsubmit="sendWhatsApp(); return false;">
+    <input id="name" placeholder="Your Name" required>
+    <input id="phone" placeholder="Phone Number" required>
+    <select id="pkg">
+      <option>Economy</option><option>Standard</option><option>Premium</option>
+    </select>
+    <button class="btn">Send on WhatsApp</button>
+  </form>
 </section><footer>
   <p>Email: ALNOORUMRAHTRAVEL@GMAIL.COM</p>
   <p>Phone / WhatsApp: +91 8186004018</p>
@@ -142,9 +137,13 @@ footer { background: #081417; padding: 40px 8%; text-align: center; }
 </footer><a class="whatsapp" href="https://wa.me/918186004018">WhatsApp</a>
 
 <script>
-  function toggle(btn) {
-    const content = btn.nextElementSibling;
-    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-  }
+function toggle(btn){const c=btn.nextElementSibling;c.style.display=c.style.display==='block'?'none':'block';}
+function sendWhatsApp(){
+  const n=document.getElementById('name').value;
+  const p=document.getElementById('phone').value;
+  const pkg=document.getElementById('pkg').value;
+  window.open(https://wa.me/918186004018?text=Name:%20${n}%0APhone:%20${p}%0APackage:%20${pkg});
+}
+function setLang(l){alert('Language switch demo added. Text can be fully translated next.');}
 </script></body>
 </html>
